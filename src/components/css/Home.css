@@ -1,0 +1,87 @@
+.HOME-master-container * {
+  animation: fadeIn2 ease .5s forwards;
+  -webkit-animation: fadeIn2 ease .5s forwards;
+  -moz-animation: fadeIn2 ease .5s forwards;
+  -o-animation: fadeIn2 ease .5s forwards;
+  -ms-animation: fadeIn2 ease .5s forwards;
+}
+
+.HOME-master-container {
+  min-height: 100vh;
+  width: 100%;
+  padding: 15vh calc(2vw + 10vh * .75);
+  display: flex;
+  flex-direction: row-reverse;
+  z-index: 1;
+}
+
+.HOME-container1 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.HOME-profile-image-container {
+  max-height: 40vh;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.5vh;
+}
+
+.HOME-profile-image-container img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.HOME-small-images-container {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2.5vh;
+}
+
+.HOME-small-image-container {
+  width: 20%;
+  max-height: 5.65vw;
+  /* background-color: white; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.HOME-small-image-container img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.HOME-small-image-container img:hover {
+  cursor: pointer;
+}
+
+.HOME-mini-bio {
+  margin-bottom: 2.5vh;
+}
+
+.HOME-container2 {
+  flex: 2;
+}
+
+.Home-container2-padding {
+  padding-right: 3vw;
+}
+
+.HOME-header-container {
+  margin-bottom: 2.5vh;
+}
+
+/* .HOME-image-grid-container {
+  margin-bottom: 2.5vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1px;
+}
+
+.HOME-image-grid-container img {
+  height: 25vh;
+} */

@@ -1,0 +1,48 @@
+.Todo-master-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow-y: auto;
+}
+
+.Todo-master-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.Todo-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Todo-header form {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+.Todo-header input:first-of-type {
+  width: 60%;
+  margin-right: 2.5px;
+}
+
+.Todos-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.Todos-container div {
+  flex: 1;
+}
+
+.Todo-container {
+  height: 100px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.Todo-completed-container .Todo-container {
+  margin-left: 0;
+}

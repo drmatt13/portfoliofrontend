@@ -1,0 +1,118 @@
+.APP-master-container * {
+  /* animation: fadeIn ease 5s forwards;
+  -webkit-animation: fadeIn ease .5s forwards;
+  -moz-animation: fadeIn ease .5s forwards;
+  -o-animation: fadeIn ease .5s forwards;
+  -ms-animation: fadeIn ease .5s forwards; */
+}
+
+.APP-master-container {
+  min-height: 100vh;
+  background-color: #000c;
+  animation: fadeIn ease .5s forwards;
+  display: flex;
+  justify-content: center;
+}
+
+.APP-flex-container {
+  height: 85vh;
+  width: 100%;
+  margin: 8.75vh calc(2vw + 10vh * .75);
+  margin-bottom: 50px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.APP-flex-divs > div {
+  border-radius: 5px;
+  height: 100%;
+}
+
+.APP-flex-container1 {
+  flex: 1;
+  position: relative;
+}
+
+.APP-code-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  color: #ddd;
+}
+
+.APP-button-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: -20px;
+}
+
+.APP-button {
+  width: 20px;
+  height: calc(14.10vh - 3.9px);
+  margin-bottom: 1px;
+}
+
+.APP-button:hover {
+  background-color: mediumspringgreen;
+  cursor: pointer;
+}
+
+.APP-patch {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+}
+
+
+
+.APP-flex-container2 {
+  flex: 2;
+  margin-left: 10px;
+  /* background-color: rgba(255, 255, 255, 0.1); */
+}
+
+.APP-flex-container2 iframe {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
+
+@media screen and (max-height:700px) {
+  /* height: 85vh; */
+  .APP-flex-container {
+    margin-top: 61.25px;
+  }
+}
+
+@media screen and (max-height:420px) {
+  .APP-flex-container {
+    height: 357px;
+  }
+  .APP-button {
+    height: 56px;
+  }
+}
+
+@media screen and (max-width:1200px) {
+  .APP-flex-container-mediaquery {
+    height: 127.5vh;
+    flex-direction: column;
+  }
+
+  .APP-flex-container2 {
+    margin-top: 10px;
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .APP-flex-container {
+    margin-left: calc(1vw + 7.5vh / 2);
+    margin-right: calc(1vw + 7.5vh / 2);
+  }
+  .APP-flex-container2 {
+    flex: 1;
+  }
+}

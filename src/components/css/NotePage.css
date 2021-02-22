@@ -1,0 +1,209 @@
+.NOTE-card-container {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.NOTE-card {
+  margin-top: 20px;
+  width: calc(100% - 45vh - 12vw);
+  max-height: 500px;
+  padding: 0 10px 10px 10px;
+  color: rgba(255, 255, 255, 0.8);
+  overflow: auto;
+  box-shadow: var(--box-shadow1);
+  font-size: 1.2em;
+  border-radius: 5px;
+}
+
+.NOTE-card-container * {
+  animation: fadeIn ease .2s;
+  -webkit-animation: fadeIn ease .2s;
+  -moz-animation: fadeIn ease .2s;
+  -o-animation: fadeIn ease .2s;
+  -ms-animation: fadeIn ease .2s;
+}
+
+.NOTE-card:first-of-type {
+  margin-top: 15vh;
+}
+
+.NOTE-card:last-of-type {
+  margin-bottom: 7.5vh;
+}
+
+
+.NOTE-code {
+  margin-top: 10px;
+}
+
+
+
+.NOTE-pictureComment {
+  align-items: center;
+}
+
+.NOTE-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+.NOTE-imageSm {
+  max-height: 300px;
+  max-width: 25vw !important;
+}
+
+.NOTE-imageMd {
+  max-height: 400px;
+  max-width: 80vw;
+}
+
+.NOTE-imageLg {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+
+
+
+
+
+.NOTE-button-container {
+  position: sticky;
+  left: 0px;
+  bottom: 0px;
+  transform: translate(10px, 10px);
+}
+
+.NOTE-button {
+  font-weight: bold;
+  position: absolute;
+  
+  color: black;
+  box-shadow: 0px 0px 5px 0px rgb(40, 40, 40);
+  padding: 5px;
+  bottom: 7.5px;
+  display: flex;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
+
+.NOTE-button:hover {
+  background-color: mediumspringgreen;
+  box-shadow: 0px 0px 5px 0px rgb(30, 30, 30);
+  cursor: pointer;
+}
+
+.NOTE-x-space1 {
+  right: 15px;
+}
+
+.NOTE-x-space2 {
+  right: 7.5px;
+}
+
+.NOTE-y-space {
+  bottom: 14px;
+}
+
+
+
+
+
+
+
+
+.NOTE-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 99;
+  animation: fadeIn ease .2s forwards;
+}
+
+.NOTE-iframe {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 150px;
+  height: 85%;
+  width: 85%;
+  background-color: white;
+  border: none;
+  box-shadow: var(--box-shadow1);
+  z-index: 100;
+  animation: fadeIn ease .2s forwards;
+}
+
+
+
+
+@media screen and (max-width:1200px) {
+  .NOTE-card {
+    width: calc(100% - 30vh - 8vw);
+  }
+}
+
+@media screen and (max-width:900px) {
+  .NOTE-card {
+    width: calc(100% - 15vh - 4vw);
+  }
+}
+
+@media screen and (max-height:700px) {
+  .NOTE-card {
+    width: calc(100% - 420px * .75 - 12vw);
+  }
+}
+
+@media screen and (max-height:700px) and (max-width:1200px) {
+  .NOTE-card {
+    width: calc(100% - 280px * .75 - 8vw);
+  }
+}
+
+@media screen and (max-height:700px) and (max-width:900px) {
+  .NOTE-card {
+    width: calc(100% - 140px * .75 - 4vw);
+  }
+}
+
+@media screen and (max-width:800px) {
+  .NOTE-card {
+    font-size: 1.0em;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .NOTE-card {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width:450px) {
+  .NOTE-card {
+    width: calc(100% - 70px * .75 - 2vw);
+  }
+}
+
+@media screen and (max-height:500px) {
+  .NOTE-card:first-of-type {
+    margin-top: calc(62.5px + 2.5vh);
+  }
+  .NOTE-card:last-of-type {
+    margin-bottom: calc(31.25px + 1.25vh);
+  }
+}

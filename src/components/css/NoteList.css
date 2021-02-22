@@ -1,0 +1,134 @@
+.Notes-master-container {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.Notes-master-container * {
+  animation: fadeIn ease .2s;
+  -webkit-animation: fadeIn ease .2s;
+  -moz-animation: fadeIn ease .2s;
+  -o-animation: fadeIn ease .2s;
+  -ms-animation: fadeIn ease .2s;
+}
+
+.Notes-route-container {
+  padding: 15vh calc(2vw + 10vh * .75);
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 5px;
+}
+
+.Notes-route {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  box-shadow: var(--box-shadow1);
+  margin-bottom: calc(2vh);
+  border-radius: 5px;
+}
+
+
+
+.Notes-title {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(59, 59, 59, 0.5);
+  border-radius: 5px;
+}
+
+
+
+.Notes-notes {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.Notes-note {
+  color: white;
+  text-decoration: none;
+  font-size: large;
+  padding: 5px 0 0 20px;
+}
+
+.Notes-note:hover {
+  color: rgba(134, 224, 134, 0.9);
+}
+
+.Notes-note:first-of-type{
+  margin-top: 10px;
+}
+
+.Notes-note:last-of-type{
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1500px) {
+  .Notes-route-container {
+      grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .Notes-route-container {
+      grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .Notes-route-container {
+      grid-template-columns: repeat(3, 1fr);
+  }
+
+  .Notes-note {
+      font-size: medium;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .Notes-route-container {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  .Notes-route-container {
+      grid-template-columns: repeat(1, 1fr);
+  }
+
+  .Notes-route {
+      height: auto !important;
+      min-height: 100px;
+      max-height: 50vh;
+  }
+
+  .Notes-note {
+    font-size: large;
+  }
+}
+
+
+@media screen and (max-height:700px) {
+  .Notes-route-container {
+    padding-left: calc(2vw + 70px * .75);
+    padding-right: calc(2vw + 70px * .75);
+  }
+}
+
+@media screen and (max-height:500px) {
+  .Notes-note {
+      font-size: small;
+  }
+}
+
+@media screen and (max-height:425px) {
+  .Notes-route-container {
+    padding-top: calc(2.5vh + 70px * .75);
+    padding-bottom: calc(2.5vh + 70px * .75);
+  }
+}

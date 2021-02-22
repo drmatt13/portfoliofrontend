@@ -1,0 +1,228 @@
+/* Global Variables */
+:root {
+  --box-shadow1: 2px 2px 1px 1px rgba(0, 0, 0, 0.06), 0 2px 3px rgba(0, 0, 0, 0.12);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.app-master-container {
+  min-height: 100vh;
+  width: 100%;
+  border-bottom: #0006 1px solid;
+}
+
+/* global flex */
+.REACT-flex {
+  display: flex;
+}
+
+/* borders */
+.REACT-bottom-border {
+  border-bottom: #000c 1px solid !important;
+}
+
+/* padding */
+.REACT-padding-10 {
+  padding: 10px;
+}
+
+
+
+/* global boxshadow */
+.REACT-box-shadow1 {
+  box-shadow: var(--box-shadow1);
+}
+
+
+
+
+
+/* scroll */
+.REACT-blue-scroll::-webkit-scrollbar-track {
+  background: #20379c !important;
+}
+
+.REACT-blue-scroll::-webkit-scrollbar-thumb {
+  background: #768be6 !important;
+}
+
+.REACT-blue-scroll::-webkit-scrollbar-corner {
+  background: #20379c !important;
+}
+
+
+/* width */
+.REACT-global-scroll::-webkit-scrollbar {
+  width: 7.5px;
+  height: 7.5px;
+}
+
+/* Track */
+.REACT-global-scroll::-webkit-scrollbar-track {
+  background: #4b4b4b;
+  border-radius: 5px;
+}
+
+/* Handle */
+.REACT-global-scroll::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+.REACT-global-scroll::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+.REACT-global-scroll::-webkit-scrollbar-corner {
+  background: #4b4b4b;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+
+
+
+/* hide container */
+.REACT-hide {
+  display: none;
+}
+
+
+
+
+
+
+
+/* COLORS */
+
+.REACT-blue-medium {
+  background-color: #2e48bb !important;
+}
+
+.REACT-blue-dark {
+  background-color: #2a33a0 !important;
+}
+
+.REACT-gray-extra-light {
+  background-color: #ccc;
+}
+
+.REACT-gray-medium {
+  background-color: #5a5656;
+}
+
+.REACT-gray-dark {
+  background-color: #4b4b4b;
+}
+
+.REACT-green-light {
+  background-color: mediumseagreen;
+}
+
+.red {
+  color: rgb(245, 111, 111);
+}
+
+.comment {
+  color: #fff7;
+}
+
+.mysqlKeyword {
+  color: rgb(91, 182, 243);
+}
+
+.yellow {
+  color: rgb(236, 203, 92);
+}
+
+.green {
+  color: rgb(101, 201, 126);
+}
+
+.number-color {
+  color: rgba(255, 181, 181, 0.9);
+}
+
+.white {
+  color: #fff;
+}
+
+.light-blue {
+  color: rgb(131, 202, 250);
+}
+
+.dark-blue {
+  color: rgb(109, 165, 255);
+}
+
+.purple {
+  color: rgb(190, 144, 212);
+}
+
+.italic {
+  font-style: italic;
+}
+
+
+
+
+/* animations */
+@keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@keyframes fadeIn2 {
+  from {
+    transform: translateY(-5px);
+    opacity:0;
+  }
+  to {
+    transform: translateY(0);
+    opacity:1;
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
