@@ -22,24 +22,26 @@ import { closeNav, auth } from './actions/globalActions'
 
 const App = () => {
 
-  useEffect(async () => {
-    // verify
-    if (getCookie('bearer')) {
-      const res = await axios({
-        method: 'post',
-        url: `${process.env.REACT_APP_BACKEND}/auth/verify`,
-        data: {bearer: getCookie('bearer')}
-      });
-      console.log(res);
-      if (!res.data.success) {
-        deleteCookie('bearer');
-        console.log('cookie deleted');
-      }
-      else {
-        auth(getCookie('bearer'));
-        console.log(getCookie('bearer'));
+  useEffect(() => {
+    const verifyAuth = async () => {
+      if (getCookie('bearer')) {
+        const res = await axios({
+          method: 'post',
+          url: `${process.env.REACT_APP_BACKEND}/auth/verify`,
+          data: {bearer: getCookie('bearer')}
+        });
+        console.log(res);
+        if (!res.data.success) {
+          deleteCookie('bearer');
+          console.log('cookie deleted');
+        }
+        else {
+          auth(getCookie('bearer'));
+          console.log(getCookie('bearer'));
+        }
       }
     }
+    verifyAuth();
   }, []);
 
   return (

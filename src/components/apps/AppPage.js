@@ -19,8 +19,8 @@ const AppPage = () => {
   const flexContainer1 = useRef(null);
   const flexContainer2 = useRef(null);
 
-  useEffect(async () => {
-    if (collection !== 'react') {
+  useEffect(() => {
+    const buildApp = async () => {
       document.title = app;
       window.scrollTo({top: 0, behavior: 'smooth'});
       document.querySelector(".app-master-container").classList.add("REACT-bottom-border");
@@ -90,6 +90,7 @@ const AppPage = () => {
         document.querySelector(".app-master-container").classList.remove("REACT-bottom-border");
       }
     }
+    if (collection !== 'react') buildApp();
   }, [])
 
   if (collection === 'react') return null;

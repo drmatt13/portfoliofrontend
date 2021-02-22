@@ -9,7 +9,7 @@ const adjustXButtonSpacing = (card, buttonContainer, maxHeight) => {
   if (buttonContainer) {
     const button = buttonContainer.firstChild;
     button.classList.add('REACT-green-light');
-    if (card.offsetHeight != maxHeight) button.classList.add('NOTE-x-space1');
+    if (card.offsetHeight !== maxHeight) button.classList.add('NOTE-x-space1');
     else button.classList.add('NOTE-x-space2');
     button.addEventListener('click', () => buildApp(card));
   }
@@ -59,7 +59,7 @@ const NotePage = () => {
     document.title = params.note;
     getCards(params, setCards);
     window.scrollTo({top: 0, behavior: 'smooth'});
-  }, []);
+  }, [params]);
 
   useEffect(() => {
     if (cards) {

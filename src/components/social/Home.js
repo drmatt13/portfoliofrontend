@@ -9,14 +9,16 @@ import { auth } from '../../actions/globalActions';
 
 const Home = () => {
 
-  // get active user
-  useEffect(async () => {
-    const res = await axios({
-      method: 'post',
-      url: `${process.env.REACT_APP_BACKEND}/auth/verify`,
-      data: {bearer: getCookie('bearer')}
-    });
-    console.log(res.data.user);
+  useEffect(() => {
+    const getActiveUser = async () => {
+      const res = await axios({
+        method: 'post',
+        url: `${process.env.REACT_APP_BACKEND}/auth/verify`,
+        data: {bearer: getCookie('bearer')}
+      });
+      console.log(res.data.user);
+    }
+    getActiveUser();
   }, []);
 
   const logout = () => {
