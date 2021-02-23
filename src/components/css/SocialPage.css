@@ -1,0 +1,7 @@
+.Social-master-container {
+  min-height: 100vh;
+  background-color: #000c;
+  animation: fadeIn ease .5s forwards;
+  display: flex;
+  justify-content: center;
+}

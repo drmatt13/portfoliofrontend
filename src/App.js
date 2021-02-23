@@ -1,8 +1,8 @@
 import axios from 'axios';
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import NavBar from './components/ui/NavBar'
-import Parrallax from './components/ui/Parrallax'
+import Spinner from './components/ui/Spinner';
 import Pages from './components/ui/Pages'
 import MiniSocial from './components/mini social/MiniSocial'
 import About from './components/ui/About'
@@ -22,24 +22,23 @@ import { closeNav, auth } from './actions/globalActions'
 
 const App = () => {
 
+  const [backendActive, setBackendActive] = useState(false);
+
   useEffect(() => {
     const verifyAuth = async () => {
-      if (getCookie('bearer')) {
-        const res = await axios({
-          method: 'post',
-          url: `${process.env.REACT_APP_BACKEND}/auth/verify`,
-          data: {bearer: getCookie('bearer')}
-        });
-        console.log(res);
-        if (!res.data.success) {
-          deleteCookie('bearer');
-          console.log('cookie deleted');
-        }
-        else {
-          auth(getCookie('bearer'));
-          console.log(getCookie('bearer'));
-        }
+      let res = await axios({
+        method: 'post',
+        url: `${process.env.REACT_APP_BACKEND}/auth/verify`,
+        data: {bearer: getCookie('bearer')}
+      });
+      if (!res.data.success) {
+        deleteCookie('bearer');
       }
+      else {
+        auth(getCookie('bearer'));
+        console.log(getCookie('bearer'));
+      }
+      setBackendActive(true);
     }
     verifyAuth();
   }, []);
@@ -48,16 +47,12 @@ const App = () => {
     <Provider store={store} >
       <Router>
         <NavBar />
-        <Parrallax background="/images/background4.jpg">
-          <div 
-            className="app-master-container" 
-            onClick={closeNav}
-          >
-            <Pages />
-            <MiniSocial />
-            <About />
-          </div>
-        </Parrallax>
+        <div className="app-master-container" style={{backgroundColor: 'rgb(108, 146, 108)', backgroundImage:"url(/images/background4.jpg)"}} onClick={closeNav}>
+          {!backendActive && <Spinner/>}
+          {backendActive && <Pages/>}
+          <MiniSocial />
+          <About />
+        </div>
         <Footer />
       </Router>
     </Provider>

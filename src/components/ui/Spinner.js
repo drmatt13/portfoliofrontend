@@ -4,7 +4,7 @@ import loading from '../images/mouse.gif';
 const Spinner = () => {
   return (
     <div style={{
-      height: "100%",
+      height: "100vh",
       width: "100%",
       display: "flex",
       alignItems: "center",

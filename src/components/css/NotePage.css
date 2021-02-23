@@ -197,6 +197,9 @@
   .NOTE-card {
     width: calc(100% - 70px * .75 - 2vw);
   }
+  .NOTE-card:first-of-type {
+    margin-top: 75px;
+  }
 }
 
 @media screen and (max-height:500px) {

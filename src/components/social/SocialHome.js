@@ -6,6 +6,9 @@ import Login from './Login';
 import Signup from './Signup';
 import Home from './Home';
 
+// css
+import '../css/SocialPage.css';
+
 //redux
 import { connect } from 'react-redux';
 
@@ -28,7 +31,11 @@ const SocialHome = memo(({global: {auth}}) => {
     window.scrollTo({top: 0, behavior: 'smooth'});
   }, []);
 
-return Routes
+return (
+  <div className="Social-master-container">
+    {Routes}
+  </div>
+)
 });
 
 const mapStateToProps = state => ({
