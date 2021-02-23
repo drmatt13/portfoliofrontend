@@ -100,6 +100,7 @@
   .Notes-route-container {
     grid-template-columns: repeat(1, 1fr);
     padding-top: calc(2.5vh + 70px * .75);
+    padding-bottom: calc(2.5vh + 70px * .75);
   }
 
   .Notes-route {
