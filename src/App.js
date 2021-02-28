@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom'
 import NavBar from './components/ui/NavBar'
 import Spinner from './components/ui/Spinner';
@@ -22,23 +22,35 @@ import { closeNav, auth } from './actions/globalActions'
 
 const App = () => {
 
-  const [backendActive, setBackendActive] = useState(false);
+  const [loading, setLoading] = useState(undefined);
+
+  let timeout;
 
   useEffect(() => {
     const verifyAuth = async () => {
+      let temp = false;
+      timeout = setTimeout(() => {
+        setLoading(true);
+        temp = true;
+      }, 500);
       let res = await axios({
-        method: 'post',
+        method: 'get',
         url: `${process.env.REACT_APP_BACKEND}/auth/verify`,
-        data: {bearer: getCookie('bearer')}
+        headers: {'bearer': getCookie('bearer')}
       });
       if (!res.data.success) {
+        auth(null);
         deleteCookie('bearer');
       }
       else {
-        auth(getCookie('bearer'));
-        console.log(getCookie('bearer'));
+        console.log(res.data.user);
+        auth(res.data.user);
       }
-      setBackendActive(true);
+      clearTimeout(timeout);
+      if (temp) setTimeout(() => {
+        setLoading(false);
+      }, 1000);
+      else setLoading(false);
     }
     verifyAuth();
   }, []);
@@ -48,8 +60,8 @@ const App = () => {
       <Router>
         <NavBar />
         <div className="app-master-container" style={{backgroundColor: 'rgb(108, 146, 108)', backgroundImage:"url(/images/background4.jpg)"}} onClick={closeNav}>
-          {!backendActive && <Spinner/>}
-          {backendActive && <Pages/>}
+          {loading && <Spinner/>}
+          {!loading && <Pages/>}
           <MiniSocial />
           <About />
         </div>

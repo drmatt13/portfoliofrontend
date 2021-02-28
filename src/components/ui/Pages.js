@@ -15,7 +15,7 @@ const Pages = () => {
       <Route path="/notes" component={NotesHome} />
       <Route path="/apps" component={AppsHome} />
       <Route path="/social" component={SocialHome} />
-      <Route exact path="/shop" component={ShopHome} />
+      <Route path="/shop" component={ShopHome} />
     </Switch>
   )
 }

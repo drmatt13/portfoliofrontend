@@ -1,4 +1,5 @@
 import { useEffect, useRef, useCallback, memo } from 'react';
+import ReactDOM from 'react-dom';
 import { useLocation, Link } from 'react-router-dom';
 import { openNav, closeNav } from '../../actions/globalActions';
 
@@ -43,7 +44,7 @@ const NavBar = memo(({global: {navOpen, logoTransparent, profileImage}}) => {
     }
   });
 
-  return (
+  return ReactDOM.createPortal(
     <>
       <div className="NAV-header">
         <div className={initialLogoTranspacity} ref={logoRef}>
@@ -78,7 +79,7 @@ const NavBar = memo(({global: {navOpen, logoTransparent, profileImage}}) => {
               <Link to="/apps" onClick={closeNav}>Apps</Link>
             </div>
             <div className="NAV-link">
-              <Link to="/social" onClick={closeNav}>Social</Link>
+              <Link to="/social/home" onClick={closeNav}>Social</Link>
             </div>
             <div className="NAV-link">
               <Link to="/shop" onClick={closeNav}>Shop</Link>
@@ -100,7 +101,7 @@ const NavBar = memo(({global: {navOpen, logoTransparent, profileImage}}) => {
         </div>
 
       </nav>
-    </>
+    </>, document.getElementById('navbar')
   )
 });
 

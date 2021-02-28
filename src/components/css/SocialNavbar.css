@@ -1,0 +1,19 @@
+.Social-navbar-master-container {
+  position: sticky;
+  height: 100px;
+  width: 100%;
+  bottom: 0;
+  background-color: darkslategrey;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  animation: fadeIn ease .5s forwards;
+}
+
+.Social-navbar-master-container button {
+  height: 50px;
+  width: 100px;
+}

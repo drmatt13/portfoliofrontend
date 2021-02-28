@@ -1,25 +1,23 @@
-import React, { useEffect } from 'react';
-import axios from 'axios';
+import React, { useEffect, useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 // utilities
-import { getCookie, setCookie, deleteCookie } from '../../utilities/cookies';
+import VerifyUser from '../../utilities/VerifyUser';
+import { deleteCookie } from '../../utilities/cookies';
 
 // redux
 import { auth } from '../../actions/globalActions';
 
+// context
+import SocialContext from './SocialContext';
+
 const Home = () => {
 
+  const { user } = useContext(SocialContext);
+
   useEffect(() => {
-    const getActiveUser = async () => {
-      const res = await axios({
-        method: 'post',
-        url: `${process.env.REACT_APP_BACKEND}/auth/verify`,
-        data: {bearer: getCookie('bearer')}
-      });
-      console.log(res.data.user);
-    }
-    getActiveUser();
-  }, []);
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }, [])
 
   const logout = () => {
     deleteCookie('bearer');
@@ -27,16 +25,19 @@ const Home = () => {
   }
 
   return (
-    <div style={{
-      width: '100%',
-      height: '100vh',
-      backgroundColor: '#FFF',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center'
-    }}>
-      <button onClick={logout}>logout</button>
-    </div>
+    <>
+    <VerifyUser/>
+      <div style={{
+        width: '100%',
+        height: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }}>
+        <Link to={`/social/${user['_id']}`} >Profile</Link>
+        <button onClick={logout}>logout</button>
+      </div>
+    </>
   )
 }
 

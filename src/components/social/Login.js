@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Spinner from '../ui/Spinner';
@@ -9,9 +9,15 @@ import { auth } from '../../actions/globalActions';
 
 const Login = () => {
 
+  const checkboxRef = useRef();
+
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  useEffect(() => {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }, [])
 
   const setState = {
     "email": setEmail,
@@ -31,10 +37,12 @@ const Login = () => {
       }
     });
 
+    const checked = checkboxRef.current.checked ? true : false;
+
     if (res.data.success) {
-      console.log(res.data.bearer);
-      setCookie('bearer', res.data.bearer, 100);
-      auth(res.data.bearer);
+      if (checked) setCookie('bearer', res.data.bearer, 1000);
+      else setCookie('bearer', res.data.bearer);
+      auth(res.data.user);
     } else {
       setLoading(false);
       setEmail('');
@@ -50,7 +58,6 @@ const Login = () => {
     <div style={{
       width: '100%',
       height: '100vh',
-      backgroundColor: '#FFF',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center'
@@ -59,6 +66,7 @@ const Login = () => {
       <form onSubmit={submitHandler}>
         <input onChange={formHandler} value={email} name="email" type="email" placeholder="email"/>
         <input onChange={formHandler} value={password} name="password" type="password" placeholder="password" minLength="6"/>
+        <input ref={checkboxRef} type="checkbox"/>
         <input type="submit" value="Login"/>
         <Link to='/social/signup'>Signup</Link>
       </form>

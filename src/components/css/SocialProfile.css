@@ -1,0 +1,40 @@
+.SOCIAL-profile-header-container {
+  background-color: #0007;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  animation: fadeIn ease .5s forwards;
+}
+
+.SOCIAL-profile-header-profile-image {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: #0007;
+  margin: 10px;
+}
+
+.SOCIAL-profile-header-name {
+  margin-bottom: 10px;
+}
+
+.SOCIAL-profile-options-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+  animation: fadeIn ease .5s forwards;
+}
+
+.SOCIAL-profile-options-container button {
+  height: 30px;
+  width: 200px;
+  margin-bottom: 5px;
+}
+
+.SOCIAL-profile-bio-container {
+  background-color: #0007;
+  margin-bottom: 20px;
+  animation: fadeIn ease .5s forwards;
+}

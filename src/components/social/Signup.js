@@ -17,6 +17,10 @@ const Login = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
 
+  useEffect(() => {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }, [])
+
   const setState = {
     "email": setEmail,
     "password": setPassword,
@@ -39,12 +43,10 @@ const Login = () => {
         lastName
       }
     });
-
     setLoading(false);
-
     if (res.data.success) {
-      setCookie('bearer', res.data.bearer, 100);
-      auth(res.data.bearer);
+      setCookie('bearer', res.data.bearer);
+      auth(res.data.user);
     } else {
       setEmail('');
       setPassword('');
@@ -61,7 +63,6 @@ const Login = () => {
     <div style={{
       width: '100%',
       height: '100vh',
-      backgroundColor: '#FFF',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center'

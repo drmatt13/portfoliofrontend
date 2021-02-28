@@ -2,7 +2,7 @@ import axios from 'axios';
 import { setCookie, deleteCookie } from '../utilities/cookies';
 
 const initialState = {
-  auth: null,
+  user: undefined,
   profileImage: null,
   navOpen: false,
   logoTransparent: false,
@@ -15,7 +15,7 @@ export default (state = initialState, action) => {
     case 'AUTH':
       return {
         ...state,
-        auth: action.payload
+        user: action.payload
       }
     case 'OPEN_NAV':
       if (!state.navOpen) return { ...state, navOpen: true }
