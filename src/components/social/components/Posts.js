@@ -6,7 +6,7 @@ import Post from './Post';
 // utilities
 import { getCookie } from '../../../utilities/cookies';
 
-const Posts = ({ profile }) => {
+const Posts = ({ profile, news }) => {
 
   const [posts, setPosts] = useState([]);
   const [appendedPosts, setAppendedPosts] = useState([]);
@@ -24,14 +24,24 @@ const Posts = ({ profile }) => {
     setPosts(res.data.posts);
   }
 
+  const fetchNews = async () => {
+    const res = await axios({
+      method: 'get',
+      url: `${process.env.REACT_APP_BACKEND}/social/news`,
+      headers: { bearer: getCookie('bearer') }
+    });
+    setPosts(res.data.posts);
+  }
+
   useEffect(() => {
-    fetchPosts();
+    if (profile) fetchPosts();
+    else fetchNews();
   }, []);
 
   return (
     <>
-      {posts.map(post => (
-        <Post key={post._id} post={post} appendPost={appendPost} />
+      {posts && posts.map(post => (
+        <Post key={post._id} post={post} appendPost={appendPost} news={news} />
       ))}
     </>
   )

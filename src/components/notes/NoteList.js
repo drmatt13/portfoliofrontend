@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import PageChange from '../ui/PageChange';
 
 // css
 import '../css/NoteList.css'
@@ -15,22 +16,21 @@ const NoteList = () => {
   }
 
   useEffect(() => {
-    document.title = "Notes";
     getCollections();
-    window.scrollTo({top: 0, behavior: 'smooth'}); 
   }, []);
 
-  return (
-    <div className="Notes-master-container">
-      {collections && <div className="Notes-route-container">
+  return <>
+    <PageChange title="Notes" />
+    <div className="w-100p fade-in">
+      {collections && <div className="Notes-route-container g">
         {Object.keys(collections).map(collection => (
-          <div key={collection} className="Notes-route REACT-gray-medium">
-            <div className="Notes-title REACT-gray-dark REACT-padding-10">{collection}</div>
-            <div className="Notes-notes REACT-global-scroll">
+          <div key={collection} className="bg-brown-400 Notes-route f f-d-column b-r-5 box-shadow-1">
+            <div className="bg-brown-500 t-white t-lg f f-j-center f-a-center b-r-5 p-10">{collection}</div>
+            <div className="mini-scroll brown-scroll f f-d-column of-y-auto">
               {collections[collection].map(note => (
                 <Link 
                   key={`${collection.replace(/ /g,"-").toLowerCase()}/${note.replace(/ /g,"-").toLowerCase()}`} 
-                  className="Notes-note REACT-global-scroll" 
+                  className="Notes-note t-white t-lg t-style-none p-t-5 p-l-20" 
                   to={`notes/${collection.replace(/ /g,"-").toLowerCase()}/${note.replace(/ /g,"-").toLowerCase()}`}
                 >
                   {note}
@@ -41,7 +41,7 @@ const NoteList = () => {
         ))}
       </div>}
     </div>
-  )
+  </>
 }
 
 export default NoteList;

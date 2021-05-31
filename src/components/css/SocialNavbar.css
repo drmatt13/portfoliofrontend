@@ -1,19 +1,35 @@
 .Social-navbar-master-container {
+  background-color: rgba(173, 219, 219, 0.6);
+  /* background-color: rgba(255, 255, 255, 0.6); */
+  backdrop-filter: blur(10px);
+
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
   position: sticky;
-  height: 100px;
-  width: 100%;
   bottom: 0;
-  background-color: darkslategrey;
 
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  
+  
+  
+  left: 50%;
+  transform: translateX(-50%);
+  
+  width: 530px;
+  padding: 7.5px 10px;
 
-  animation: fadeIn ease .5s forwards;
 }
 
-.Social-navbar-master-container button {
+.Social-navbar-master-container div {
+  background-color: #fffC;
   height: 50px;
-  width: 100px;
+  width: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Social-navbar-master-container div:hover {
+  background-color: rgba(68, 204, 68, 0.726);
+  cursor: pointer;
 }

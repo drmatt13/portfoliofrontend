@@ -1,0 +1,100 @@
+.PATH__path-container {
+  margin: 2.5vh;
+}
+
+.PATH__grid {
+  display: grid;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: sticky;
+  left: 0;
+  /* padding-right: 2.5vh; */
+}
+
+.PATH__grid div {
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  border: 1px solid #ffffff0D;
+  transition: background-color .25s ease-out;
+}
+
+.PATH__grid div:hover {
+  cursor: pointer;
+  background-color: aqua;
+  transition: background-color .025s ease-in;
+}
+
+.PATH__start {
+  background-color: springgreen !important;
+}
+
+.PATH__end {
+  background-color: tomato !important;
+}
+
+.PATH__wall {
+  background-color: aqua !important;
+  border: 1px solid aqua !important;
+  transition: background-color .0s !important;
+}
+
+.PATH__bloom {
+  background-color: rgb(68, 68, 138);
+  animation: crimson-fade .5s ease-out forwards;
+}
+
+.PATH__container {
+  display: flex;
+  width: 25vw;
+  margin-left: 2.5vh;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently */
+}
+
+.PATH__input-container {
+  display: flex;
+  flex: 1;
+  margin: 1px;
+}
+
+.PATH__input {
+  width: 100%;
+}
+
+.PATH__btn {
+  margin: 1px;
+  background-color: #FFF4;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.PATH__btn:hover {
+  background-color: rgba(0, 255, 128, 0.5);
+  cursor: pointer;
+}
+
+.PATH__btn-selected {
+background-color: springgreen !important;
+}
+
+@keyframes crimson-fade {
+  0% {
+    opacity: 0;
+    background-color: crimson;
+  }
+  25% {
+    background-color: violet;
+  }
+  50% {
+    background-color: rgb(68, 68, 138);
+  }
+  100% {
+    opacity: 1;
+    
+  }
+}

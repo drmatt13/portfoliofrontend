@@ -1,26 +1,19 @@
-.NOTE-card-container {
-  width: 100vw;
+.NOTE-page-container {
   min-height: 100vh;
+  background: inherit;
+}
+
+.NOTE-card-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .NOTE-card {
-  margin-top: 20px;
   width: calc(100% - 45vh - 12vw);
   max-height: 500px;
-  padding: 0 10px 10px 10px;
-  color: rgba(255, 255, 255, 0.8);
-  overflow: auto;
-  box-shadow: var(--box-shadow1);
   font-size: 1.2em;
-  border-radius: 5px;
-  animation: fadeIn ease .5s;
-  -webkit-animation: fadeIn ease .5s;
-  -moz-animation: fadeIn ease .5s;
-  -o-animation: fadeIn ease .5s;
-  -ms-animation: fadeIn ease .5s;
 }
 
 .NOTE-card:first-of-type {
@@ -30,24 +23,6 @@
 .NOTE-card:last-of-type {
   margin-bottom: 7.5vh;
 }
-
-
-.NOTE-code {
-  margin-top: 10px;
-}
-
-
-
-.NOTE-pictureComment {
-  align-items: center;
-}
-
-.NOTE-image {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
 
 .NOTE-imageSm {
   max-height: 300px;
@@ -64,11 +39,6 @@
   max-width: 100%;
 }
 
-
-
-
-
-
 .NOTE-button-container {
   position: sticky;
   left: 0px;
@@ -78,20 +48,9 @@
 
 .NOTE-button {
   font-weight: bold;
-  position: absolute;
-  
-  color: black;
   box-shadow: 0px 0px 5px 0px rgb(40, 40, 40);
-  padding: 5px;
   bottom: 7.5px;
-  display: flex;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-   -khtml-user-select: none; /* Konqueror HTML */
-     -moz-user-select: none; /* Old versions of Firefox */
-      -ms-user-select: none; /* Internet Explorer/Edge */
-          user-select: none; /* Non-prefixed version, currently
-                                supported by Chrome, Edge, Opera and Firefox */
+  transition: background-color 0.05s ease-out;
 }
 
 .NOTE-button:hover {
@@ -110,39 +69,20 @@
 
 .NOTE-y-space {
   bottom: 14px;
+  /* background-color: white !important; */
 }
 
 
-
-
-
-
-
-
-.NOTE-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 99;
-  animation: fadeIn ease .2s forwards;
-}
 
 .NOTE-iframe {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   min-height: 150px;
-  height: 85%;
-  width: 85%;
+  height: 85vh;
+  width: 85vw;
   background-color: white;
   border: none;
-  box-shadow: var(--box-shadow1);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   z-index: 100;
-  animation: fadeIn ease .2s forwards;
+  animation: fadeIn ease .5s forwards;
 }
 
 

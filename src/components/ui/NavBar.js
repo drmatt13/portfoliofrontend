@@ -7,11 +7,13 @@ import { openNav, closeNav } from '../../actions/globalActions';
 import '../css/NavBar.css';
 
 // images
-import logo from '../images/react.png';
-import modalBackground from '../images/modalBackground.jpg';
+import logo from '../images/circle.png';
+// import modalBackground from '../images/modalBackground.jpg';
 
 //redux
 import { connect } from 'react-redux';
+
+let appMasterContainer;
 
 const NavBar = memo(({global: {navOpen, logoTransparent, profileImage}}) => {
 
@@ -22,15 +24,16 @@ const NavBar = memo(({global: {navOpen, logoTransparent, profileImage}}) => {
   const initialLogoTranspacity = ["social", "shop"].includes(initialLocation) ? "NAV-logo NAV-logo-opacity" : "NAV-logo";
 
   const scroll = useCallback(() => {
-    if (window.scrollY === 0 && !logoTransparent) logoRef.current.classList.remove("NAV-logo-opacity");
+    if (appMasterContainer.scrollTop === 0 && !logoTransparent) logoRef.current.classList.remove("NAV-logo-opacity");
     else logoRef.current.classList.add("NAV-logo-opacity");
   }, [logoTransparent]);
 
   useEffect(() => {
+    appMasterContainer = document.getElementById("app-master-container");
     scroll();
-    document.addEventListener('scroll', scroll);
+    appMasterContainer.addEventListener('scroll', scroll);
     return () => {
-      document.removeEventListener('scroll', scroll);
+      appMasterContainer.removeEventListener('scroll', scroll);
     }
   }, [scroll]);
 
@@ -46,19 +49,21 @@ const NavBar = memo(({global: {navOpen, logoTransparent, profileImage}}) => {
 
   return ReactDOM.createPortal(
     <>
-      <div className="NAV-header">
+      <div className="NAV-header fade-in">
         <div className={initialLogoTranspacity} ref={logoRef}>
           <img src={logo} alt="logo" onClick={openNav} />
         </div>
       </div>
 
-      <nav className="NAV-modal-container" ref={navRef} style={{
-            backgroundImage: 'url("/images/background1.jpg")'
-          }}>
+      <nav className="NAV-modal-container" ref={navRef} 
+        // style={{
+        //   backgroundImage: 'url("/images/background1.jpg")'
+        // }}
+      >
 
 
         <div className="NAV-modal-background" >
-          <img src={modalBackground} alt="modal background"/>
+          {/* <img src={modalBackground} alt="modal background"/> */}
           <div className="NAV-user-img-container">
             <img src="/images/default-profile-image.jpg" alt=""/>
             {!!profileImage && <img src="/images/default-profile-image.jpg" alt="default-user"/>}

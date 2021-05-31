@@ -1,0 +1,151 @@
+.SOCIAL-post-master-container {
+  background-color: #FFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 350px;
+  max-height: 450px;
+  width: 500px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  margin-bottom: 20vh;
+}
+
+.SOCIAL-post-header {
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.SOCIAL-post-header-exit {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 0px;
+  right: -5px;
+  color: rgb(57, 64, 93);
+  font-size: 25px;
+}
+
+.SOCIAL-post-header-exit:hover {
+  cursor: pointer;
+  color: red;
+}
+
+.SOCIAL-post-header-exit i {
+  display: block;
+}
+
+.SOCIAL-post-header h2 {
+  padding-bottom: 15px;
+  text-align: center;
+  border-bottom: 1px solid rgb(219, 219, 219);
+}
+
+.SOCIAL-post-secondary-container {
+  flex: 1;
+  /* height: 100%; */
+  max-height: 50vh;
+  overflow-y: auto;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: space-evenly; */
+  position: relative;
+}
+
+.SOCIAL-post-form {
+  width: 100%;
+  min-height: 50px;
+  font-size: large;
+  margin-bottom: 20px;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
+
+.SOCIAL-post-form-placeholder {
+  position: absolute;
+  color: grey;
+}
+
+
+.SOCIAL-post-og-container-exit {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  top: 10px;
+  right: 10px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  font-size: 25px;
+}
+
+.SOCIAL-post-og-container-exit:hover {
+  cursor: pointer;
+  color: rgb(255, 100, 100);
+  background-color: black;
+}
+
+.SOCIAL-post-og-container-exit i {
+  display: block;
+}
+
+.SOCIAL-post-og-image {
+  min-height: 200px;
+  max-height: 300px;
+  display: block;
+}
+
+.SOCIAL-post-og-image img {
+  max-height: 300px;
+  width: 100%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.SOCIAL-post-og-info-container {
+  padding: 5px 10px 7.5px 10px;
+  /* min-height: 50px; */
+}
+
+.SOCIAL-post-og-source {
+  font-size: smaller;
+  color: #333;
+}
+
+.SOCIAL-post-og-title {
+  margin: 2.5px 0;
+}
+
+.SOCIAL-post-og-desc {
+  color: #333;
+}
+
+.SOCIAL-post-submit-btn:disabled {
+  background-color: rgba(216, 216, 216, 0.692)!important;
+  cursor: default!important;
+  color: grey;
+}
+
+.SOCIAL-post-submit-btn {
+  margin-top: 10px;
+  min-height: 40px;
+  height: 40px;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background-color: rgb(25, 144, 255);
+  color: #FFF;
+  border-radius: 20px;
+  font-size: large;
+}
+
+.SOCIAL-post-submit-btn:hover {
+  background-color: rgb(64, 161, 251);
+  cursor: pointer;
+}

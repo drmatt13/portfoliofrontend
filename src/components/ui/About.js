@@ -2,12 +2,10 @@ import React from 'react'
 
 const About = () => {
 
-  let visable = false;
-
   return (
-    <>
-      {visable && <>About</>}
-    </>
+    <div>
+      About
+    </div>
   )
 }
 

@@ -14,9 +14,11 @@ const Footer = () => {
   }, []);
 
   return (
-    <div className="FOOTER-master-container" style={{
-      backgroundImage: 'url("/images/background2.jpg")'
-    }}>
+    <div className="FOOTER-master-container" 
+      // style={{
+      //   backgroundImage: 'url("/images/background2.jpg")'
+      // }}
+    >
       <div className="FOOTER-background" ref={container} >
         <div className="FOOTER-image-container" link="https://cloud.google.com/">
           <img src="/images/gcp.png" alt="google cloud"/>

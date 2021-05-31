@@ -55,7 +55,10 @@ export const updateCache = (cache, s, spaces="  ") => {
   let specialCharExeption = false;
   for (let i = s.length - 1; i >= 0; i--) {
     char = s.pop();
+
+    // CHCEK IF A SPECIAL CHAR 
     if (specialChars[char]) {
+      // IF SPACE
       if (char === " ") {
         specialCharExeption = false;
         if (prevSpace) cache.update(char);
@@ -64,7 +67,10 @@ export const updateCache = (cache, s, spaces="  ") => {
           newString = true;
         }
         prevSpace = true;
-      } else if (!["-", '!', "<"].includes(char)) {
+      }
+
+      // IF DOESNT CONTAIN THESE CHARS
+      else if (!["-", '!', "<"].includes(char)) {
         if (char === "\n") {
           if (prevSpace) cache.update(spaces);
           else cache.push(spaces);
@@ -72,11 +78,8 @@ export const updateCache = (cache, s, spaces="  ") => {
         newString = true;
         prevSpace = false;
         cache.push(char);
-      } else {
-        // if (newString && [">", "-"].includes(char)) {
-        //   specialCharExeption = true;
-        //   newString = false;
-        // }
+      } 
+      else {
         if (specialCharExeption) {
           if (prevSpace) {
             prevSpace = false;
@@ -87,6 +90,8 @@ export const updateCache = (cache, s, spaces="  ") => {
         } else cache.push(char); 
         prevSpace = false;
       }
+
+
     } else {
       prevSpace = false;
       if (specialCharExeption) {

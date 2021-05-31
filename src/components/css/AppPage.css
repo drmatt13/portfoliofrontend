@@ -1,17 +1,6 @@
-.APP-master-container * {
-  /* animation: fadeIn ease 5s forwards;
-  -webkit-animation: fadeIn ease .5s forwards;
-  -moz-animation: fadeIn ease .5s forwards;
-  -o-animation: fadeIn ease .5s forwards;
-  -ms-animation: fadeIn ease .5s forwards; */
-}
-
 .APP-master-container {
-  min-height: 100vh;
   background-color: #000c;
-  animation: fadeIn ease .5s forwards;
-  display: flex;
-  justify-content: center;
+  min-height: 100vh;
 }
 
 .APP-flex-container {
@@ -21,37 +10,23 @@
   margin-bottom: 50px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
-}
-
-.APP-flex-divs > div {
-  border-radius: 5px;
-  height: 100%;
-}
-
-.APP-flex-container1 {
-  flex: 1;
-  position: relative;
+  overflow: auto;
 }
 
 .APP-code-container {
-  position: absolute;
   height: 100%;
   width: 100%;
-  overflow: auto;
-  color: #ddd;
 }
 
 .APP-button-container {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  left: -20px;
+  left: calc(2vw + 10vh * .75 - 10px)
 }
 
 .APP-button {
   width: 20px;
   height: calc(14.10vh - 3.9px);
   margin-bottom: 1px;
+  transition: background-color 0.1s ease-out;
 }
 
 .APP-button:hover {
@@ -60,17 +35,8 @@
 }
 
 .APP-patch {
-  position: absolute;
-  width: 10px;
   height: 10px;
-}
-
-
-
-.APP-flex-container2 {
-  flex: 2;
-  margin-left: 10px;
-  /* background-color: rgba(255, 255, 255, 0.1); */
+  width: 10px;
 }
 
 .APP-flex-container2 iframe {
@@ -80,7 +46,6 @@
 }
 
 @media screen and (max-height:700px) {
-  /* height: 85vh; */
   .APP-flex-container {
     margin-top: 61.25px;
   }
@@ -113,6 +78,11 @@
     margin-right: calc(1vw + 7.5vh / 2);
     font-size: x-small;
   }
+
+  .APP-button-container {
+    left: calc(1vw + 7.5vh / 2 - 10px)
+  }
+
   .APP-flex-container2 {
     flex: 1;
   }

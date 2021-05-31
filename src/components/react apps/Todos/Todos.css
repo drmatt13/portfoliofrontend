@@ -1,48 +1,143 @@
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+.no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
+
 .Todo-master-container {
   height: 100%;
   width: 100%;
   display: flex;
-  flex-direction: row;
-  overflow-y: auto;
+  flex-direction: column;
+  position: relative;
+  animation: fadeIn .25s ease-out;
 }
 
-.Todo-master-container {
+.Todo-exit-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 5px;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  background-color: rgba(255, 255, 255, 0.75);
   display: flex;
-  flex-direction: column;
-}
-
-.Todo-header {
-  display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  border: 1px solid #AAA;
+  color: #333;
+  transition: all 0.1s ease-in;
 }
 
-.Todo-header form {
+.Todo-exit-btn:hover {
+  cursor: pointer;
+  background-color: tomato;
+  border-color: rgb(250, 63, 30);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.Todo-green-hover:hover {
+  background-color: limegreen !important;
+  border-color: rgb(35, 192, 35) !important;
+}
+
+.Todo-background-container {
+  position: absolute;
+  height: 100%;
   width: 100%;
-  text-align: center;
-  padding: 10px;
+  padding: 10vh;
+  background-color: #000C;
+  z-index: 10;
+  animation: fadeIn .1s ease-out;
 }
 
-.Todo-header input:first-of-type {
-  width: 60%;
-  margin-right: 2.5px;
+.Todo-create-todo-container {
+  position: absolute;
+  background-color: #FFFC;
+  top: 100px;
+  left: 100px;
+  height: calc(100% - 200px);
+  width: calc(100% - 200px);
+  z-index: 10;
+  padding-top: 25px;
+  overflow-y: auto;
+  border-radius: 15px;
+  animation: fadeIn .1s ease-out;
+}
+
+.Todo-text-container {
+  min-height: 200px;
+  max-height: 300px;
+  padding-left: 5px;
+  background-color: white;
+  overflow-y: scroll;
+  margin: 10px;
+  margin-top: 25px;
+}
+
+.Todo-display-title {
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-left: 5px;
+  font-size: x-large;
+  font-weight: 700;
+}
+
+.Todo-display-desc {
+  margin: 10px;
+  padding-left: 5px;
+  /* min-height: 200px; */
+  height: 60%;
+  max-height: 300px;
+  overflow-y: scroll;
+  white-space: pre-wrap;
+  background-color: white;
 }
 
 .Todos-container {
+  height: 90%;
   display: flex;
   flex-direction: row;
-}
-
-.Todos-container div {
   flex: 1;
 }
 
-.Todo-container {
-  height: 100px;
-  padding: 10px;
+.Todos-container > div {
+  flex: 1;
   margin: 10px;
+  margin-bottom: 0;
+  background-color: #FFF3;
+  overflow-y: scroll;
 }
 
-.Todo-completed-container .Todo-container {
-  margin-left: 0;
+.Todos-container > div:first-of-type {
+  margin-right: 0;
+}
+
+.Todo-container {
+  padding: 10px;
+  transition: opacity 0.1s ease-in;
+  opacity: 1;
+}
+
+.Todo-container:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0s;
+}
+
+.Todo-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 10px;
 }

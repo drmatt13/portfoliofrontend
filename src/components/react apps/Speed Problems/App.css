@@ -1,0 +1,347 @@
+.App-header {
+  background-color: #282c34;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  overflow-x: hidden;
+}
+
+.problemset-problems {
+  display: flex;
+  transform: translateX(calc(50% - 25px));
+}
+
+.problemset-input-shake {
+  animation: slide1 ease-in .2s;
+}
+
+.problemset-problem {
+  margin: 20px 50px 0 0;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  opacity: 0;
+}
+
+.fadein1 {
+  animation: fadein1 .1s forwards;
+}
+
+.fadein2 {
+  animation: fadein2 .1s forwards;
+}
+
+.fadein3 {
+  animation: fadein3 .1s forwards;
+}
+
+.fadein4 {
+  animation: fadein4 .1s forwards;
+}
+
+
+@keyframes fadein1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.1;
+  }
+}
+
+@keyframes fadein2 {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 0.25;
+  }
+}
+
+@keyframes fadein3 {
+  from {
+    opacity: 0.25;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+@keyframes fadein4 {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeout1 {
+  animation: fadeout1 .1s forwards;
+}
+
+.fadeout2 {
+  animation: fadeout2 .1s forwards !important;
+}
+
+@keyframes fadeout1 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.25;
+  }
+}
+
+@keyframes fadeout2 {
+  from {
+    opacity: 0.25;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.problemset-problem div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.problemset-problem div:last-of-type {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.problemset-input {
+  margin-top: 10px;
+  text-align: center;
+  font-size: xx-large;
+  width: 50px;
+  border: 3px solid white;
+  border-radius: 4px;
+}
+
+
+.problemset-span {
+  width: 26px;
+  padding: 0 24px 0 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.problemset-input-incorrect {
+  border: 3px solid red !important;
+}
+
+.problemset-input-correct {
+  border: 3px solid limegreen !important;
+}
+
+.problemset-input-shake {
+  animation: shake 0.2s ease-in-out 0s 2;
+}
+
+.problemset-input:focus {
+  outline: none;
+}
+
+.problemset-input::-webkit-outer-spin-button,
+.problemset-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.problemset-input[type=number] {
+  -moz-appearance: textfield;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0rem); }
+  25% { transform: translateX(0.2rem); }
+  75% { transform: translateX(-0.2rem); }
+  100% { transform: translateX(0rem); }
+}
+
+@keyframes slide1 {
+  100% { transform: translateX(calc(50% - 135px)); }
+}
+
+.slide1 {
+  animation: slide1 ease-in-out .1s forwards;
+}
+
+@keyframes slide2 {
+  0% { transform: translateX(calc(50% - 135px)); }
+  100% { transform: translateX(calc(50% - 245px)); }
+}
+
+.slide2 {
+  animation: slide2 ease-in-out .1s forwards;
+}
+
+@keyframes slide3 {
+  0% { transform: translateX(calc(50% - 245px)); }
+  100% { transform: translateX(calc(50% - 355px)); }
+}
+
+.slide3 {
+  animation: slide3 ease-in-out .1s forwards;
+}
+
+@keyframes slide4 {
+  0% { transform: translateX(calc(50% - 355px)); }
+  100% { transform: translateX(calc(50% - 465px)); }
+}
+
+.slide4 {
+  animation: slide4 ease-in-out .1s forwards;
+}
+
+@keyframes slide5 {
+  0% { transform: translateX(calc(50% - 465px)); }
+  100% { transform: translateX(calc(50% - 575px)); }
+}
+
+.slide5 {
+  animation: slide5 ease-in-out .1s forwards;
+}
+
+@keyframes slide6 {
+  0% { transform: translateX(calc(50% - 575px)); }
+  100% { transform: translateX(calc(50% - 685px)); }
+}
+
+.slide6 {
+  animation: slide6 ease-in-out .1s forwards;
+}
+
+@keyframes slide7 {
+  0% { transform: translateX(calc(50% - 685px)); }
+  100% { transform: translateX(calc(50% - 795px)); }
+}
+
+.slide7 {
+  animation: slide7 ease-in-out .1s forwards;
+}
+
+@keyframes slide8 {
+  0% { transform: translateX(calc(50% - 795px)); }
+  100% { transform: translateX(calc(50% - 905px)); }
+}
+
+.slide8 {
+  animation: slide8 ease-in-out .1s forwards;
+}
+
+@keyframes slide9 {
+  0% { transform: translateX(calc(50% - 905px)); }
+  100% { transform: translateX(calc(50% - 1015px)); }
+}
+
+.slide9 {
+  animation: slide9 ease-in-out .1s forwards;
+}
+
+@keyframes slide10 {
+  0% { transform: translateX(calc(50% - 1015px)); }
+  100% { transform: translateX(calc(50% - 1125px)); }
+}
+
+.slide10 {
+  animation: slide10 ease-in-out .1s forwards;
+}
+
+@keyframes slide11 {
+  0% { transform: translateX(calc(50% - 1125px)); }
+  100% { transform: translateX(calc(50% - 1235px)); }
+}
+
+.slide11 {
+  animation: slide11 ease-in-out .1s forwards;
+}
+
+@keyframes slide12 {
+  0% { transform: translateX(calc(50% - 1235px)); }
+  100% { transform: translateX(calc(50% - 1345px)); }
+}
+
+.slide12 {
+  animation: slide12 ease-in-out .1s forwards;
+}
+
+@keyframes slide13 {
+  0% { transform: translateX(calc(50% - 1345px)); }
+  100% { transform: translateX(calc(50% - 1455px)); }
+}
+
+.slide13 {
+  animation: slide13 ease-in-out .1s forwards;
+}
+
+@keyframes slide14 {
+  0% { transform: translateX(calc(50% - 1455px)); }
+  100% { transform: translateX(calc(50% - 1565px)); }
+}
+
+.slide14 {
+  animation: slide14 ease-in-out .1s forwards;
+}
+
+@keyframes slide15 {
+  0% { transform: translateX(calc(50% - 1565px)); }
+  100% { transform: translateX(calc(50% - 1675px)); }
+}
+
+.slide15 {
+  animation: slide15 ease-in-out .1s forwards;
+}
+
+@keyframes slide16 {
+  0% { transform: translateX(calc(50% - 1675px)); }
+  100% { transform: translateX(calc(50% - 1785px)); }
+}
+
+.slide16 {
+  animation: slide16 ease-in-out .1s forwards;
+}
+
+
+@keyframes slide17 {
+  0% { transform: translateX(calc(50% - 1785px)); }
+  100% { transform: translateX(calc(50% - 1895px)); }
+}
+
+.slide17 {
+  animation: slide17 ease-in-out .1s forwards;
+}
+
+@keyframes slide18 {
+  0% { transform: translateX(calc(50% - 1895px)); }
+  100% { transform: translateX(calc(50% - 2005px)); }
+}
+
+.slide18 {
+  animation: slide18 ease-in-out .1s forwards;
+}
+
+@keyframes slide19 {
+  0% { transform: translateX(calc(50% - 2005px)); }
+  100% { transform: translateX(calc(50% - 2115px)); }
+}
+
+.slide19 {
+  animation: slide19 ease-in-out .1s forwards;
+}
+
+@keyframes slide20 {
+  0% { transform: translateX(calc(50% - 2115px)); }
+  100% { transform: translateX(calc(50% - 2225px)); }
+}
+
+.slide20 {
+  animation: slide20 ease-in-out .1s forwards;
+}

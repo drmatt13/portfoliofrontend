@@ -7,7 +7,7 @@ import processCssStack from './processCssStack';
 //     processSassStack
 import processJsStack from './processJsStack';
 //     processJsxStack
-//     processSqlStack
+import processSqlStack from './processSqlStack';
 
 const getCards = async (params, updateState) => {
 
@@ -20,8 +20,7 @@ const getCards = async (params, updateState) => {
   for (let data of JSON.parse(notes.data)) {
 
     let card = document.createElement('div');
-    card.classList.add('NOTE-card', 'REACT-global-scroll', 'REACT-gray-dark');
-
+    card.classList = "NOTE-card m-t-20 p-10 p-t-0 mini-scroll brown-scroll bg-brown-500 t-white box-shadow-1 fade-in b-r-5 of-auto"
     let code, pre, flag=false, isEmpty=true;
 
     // html index --------------------------
@@ -29,7 +28,7 @@ const getCards = async (params, updateState) => {
       flag=true;
       isEmpty = false;
       code = document.createElement('div');
-      code.classList.add('NOTE-code');
+      // code.classList.add('m-t-10');
       pre = document.createElement('pre');
       pre.innerHTML = `<span class="light-blue">` + encode('<') + `</span><span class="red">html</span><span class="light-blue">` + encode('>') + "</span>";
       code.appendChild(pre);
@@ -123,8 +122,7 @@ const getCards = async (params, updateState) => {
         }
         // sql object
         else if (i.sql) {
-          cache = new ReverseStack();
-          // console.log("Cannot process sql yet: cache cleared");
+          processSqlStack(cache, pre);
         }
         else {
           cache = new ReverseStack();
@@ -157,9 +155,9 @@ const getCards = async (params, updateState) => {
         else if (i.output) pre.innerHTML = `<span class="output">${encode(i.output)}</span>`;
         // images
         else if (i.imageSm || i.imageMd || i.imageLg) {
-          card.classList.add("NOTE-picture-comment");
+          card.classList.add("f-a-center");
           pre = document.createElement('div');
-          pre.classList = "NOTE-image"
+          pre.classList = "w-100p f f-j-center"
           if (i.imageSm) pre.innerHTML = `<img class="NOTE-imageSm" src="/images/notes/${i.imageSm}" />`;
           else if (i.imageMd) pre.innerHTML = `<img class="NOTE-imageMd" src="/images/notes/${i.imageMd}" />`;
           else if (i.imageLg) pre.innerHTML = `<img class="NOTE-imageLg" src="/images/notes/${i.imageLg}" />`;
@@ -177,7 +175,7 @@ const getCards = async (params, updateState) => {
     if (data[4].render !== false) {
       pre = document.createElement('div');
       pre.classList.add('NOTE-button-container');
-      pre.innerHTML = '<div class="NOTE-button">render</div>';
+      pre.innerHTML = '<div class="NOTE-button no-select a t-black p-5 f">render</div>';
       card.appendChild(pre);
     }
     

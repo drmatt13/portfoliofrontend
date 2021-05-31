@@ -1,6 +1,7 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import PageChange from '../ui/PageChange';
 
 // css
 import '../css/AppPage.css';
@@ -21,8 +22,6 @@ const AppPage = () => {
 
   useEffect(() => {
     const buildApp = async () => {
-      document.title = app;
-      window.scrollTo({top: 0, behavior: 'smooth'});
       document.querySelector(".app-master-container").classList.add("REACT-bottom-border");
 
       const buttons = buttonContainer.current.children;
@@ -36,14 +35,14 @@ const AppPage = () => {
         i.addEventListener("click", () => {
           for (let j of buttons) {
             if (i===j) {
-              j.classList = "APP-button REACT-green-light";
+              j.classList = "APP-button bg-green-400";
               codeContainer.forEach((div, k) => {
-                if (+j.getAttribute('page') === k) div.classList.remove("REACT-hide");
-                else div.classList.add("REACT-hide");
+                if (+j.getAttribute('page') === k) div.classList.remove("none");
+                else div.classList.add("none");
               })
             }
             else {
-              j.classList = "APP-button REACT-gray-extra-light";
+              j.classList = "APP-button bg-gray-500";
             }
           }
         });
@@ -77,7 +76,7 @@ const AppPage = () => {
           case "script":
             processJsStack(cache, pre);
             codeContainer[2].appendChild(pre);
-            iframeCodePiece.innerHTML = (`<script deffered>${code}</script>`);
+            iframeCodePiece.innerHTML = (`<script>${code}</script>`);
             iframeCode.appendChild(iframeCodePiece);
             break;
           default:
@@ -94,24 +93,25 @@ const AppPage = () => {
   }, [])
 
   if (collection === 'react') return null;
-  return (
-    <div className="APP-master-container">
-      <div className="APP-flex-container APP-flex-container-mediaquery APP-flex-divs REACT-flex REACT-padding-10">
-        <div className="APP-flex-container1 REACT-gray-dark" ref={flexContainer1}>
-          <div className="APP-patch REACT-gray-dark"></div>
-          <div className="APP-code-container REACT-global-scroll REACT-padding-10"></div>
-          <div className="APP-code-container REACT-global-scroll REACT-padding-10 REACT-hide"></div>
-          <div className="APP-code-container REACT-global-scroll REACT-padding-10 REACT-hide"></div>
-          <div className="APP-button-container" ref={buttonContainer}>
-            <div className="APP-button REACT-green-light" page="0"></div>
-            <div className="APP-button REACT-gray-extra-light" page="1"></div>
-            <div className="APP-button REACT-gray-extra-light" page="2"></div>
-          </div>
+  return <>
+    <PageChange title={app} />
+    <div className="APP-master-container f fade-in">
+      <div className="APP-flex-container APP-flex-container-mediaquery f p-10">
+        <div className="APP-button-container a f f-d-column" ref={buttonContainer}>
+          <div className="APP-button bg-green-400" page="0" />
+          <div className="APP-button bg-gray-500" page="1" />
+          <div className="APP-button bg-gray-500" page="2" />
         </div>
-        <div className="APP-flex-container2" ref={flexContainer2}></div>
+        <div className="APP-flex-container1 bg-brown-500 f-1 b-r-5 relative" ref={flexContainer1}>
+          <div className="APP-patch bg-brown-500 a"></div>
+          <div className="APP-code-container a h-100p w-100p of-auto t-white mini-scroll brown-scroll p-10" />
+          <div className="APP-code-container a h-100p w-100p of-auto t-white mini-scroll brown-scroll p-10 none" />
+          <div className="APP-code-container a h-100p w-100p of-auto t-white mini-scroll brown-scroll p-10 none" />
+        </div>
+        <div className="APP-flex-container2 f-2 m-l-10" ref={flexContainer2} />
       </div>
     </div>
-  )
+  </>
 }
 
 export default AppPage

@@ -1,0 +1,364 @@
+.bg-red-100 {
+  background-color: #FADBD8;
+}
+
+.bg-red-200 {
+  background-color: #F5B7B1;
+}
+
+.bg-red-300 {
+  background-color: #F1948A;
+}
+
+.bg-red-400 {
+  background-color: #EC7063;
+}
+
+.bg-red-500 {
+  background-color: #E74C3C;
+}
+
+.bg-red-600 {
+  background-color: #CB4335;
+}
+
+.bg-red-700 {
+  background-color: #B03A2E;
+}
+
+.bg-red-800 {
+  background-color: #943126;
+}
+
+.bg-red-900 {
+  background-color: #78281F;
+}
+
+
+
+
+
+
+
+.bg-purple-100 {
+  background-color: #E8DAEF;
+}
+
+.bg-purple-200 {
+  background-color: #D2B4DE;
+}
+
+.bg-purple-300 {
+  background-color: #BB8FCE;
+}
+
+.bg-purple-400 {
+  background-color: #A569BD;
+}
+
+.bg-purple-500 {
+  background-color: #8E44AD;
+}
+
+.bg-purple-600 {
+  background-color: #7D3C98;
+}
+
+.bg-purple-700 {
+  background-color: #6C3483;
+}
+
+.bg-purple-800 {
+  background-color: #5B2C6F;
+}
+
+.bg-purple-900 {
+  background-color: #4A235A;
+}
+
+
+
+
+
+.bg-green-100 {
+  background-color: #ABEBC6;
+}
+
+.bg-green-200 {
+  background-color: #82E0AA;
+}
+
+.bg-green-300 {
+  background-color: #58D68D;
+}
+
+.bg-green-400 {
+  background-color: #2ECC71;
+}
+
+.bg-green-500 {
+  background-color: #28B463;
+}
+
+.bg-green-600 {
+  background-color: #239B56;
+}
+
+.bg-green-700 {
+  background-color: #1D8348;
+}
+
+.bg-green-800 {
+  background-color: #186A3B;
+}
+
+.bg-green-900 {
+  background-color: #196F3D;
+}
+
+
+
+
+
+.bg-yellow-100 {
+  background-color: #FEF9E7;
+}
+
+.bg-yellow-200 {
+  background-color: #FCF3CF;
+}
+
+.bg-yellow-300 {
+  background-color: #F9E79F;
+}
+
+.bg-yellow-400 {
+  background-color: #F7DC6F;
+}
+
+.bg-yellow-500 {
+  background-color: #F4D03F;
+}
+
+.bg-yellow-600 {
+  background-color: #F1C40F;
+}
+
+.bg-yellow-700 {
+  background-color: #D4AC0D;
+}
+
+.bg-yellow-800 {
+  background-color: #B7950B;
+}
+
+.bg-yellow-900 {
+  background-color: #9A7D0A;
+}
+
+
+
+
+
+
+.bg-blue-100 {
+  background-color: #1eacee;
+}
+
+.bg-blue-200 {
+  background-color: #1586d1;
+}
+
+.bg-blue-300 {
+  background-color: #4764e9;
+}
+
+.bg-blue-400 {
+  background-color: #3d59d4;
+}
+
+.bg-blue-500 {
+  background-color: #2e48bb;
+}
+
+.bg-blue-600 {
+  background-color: #20379c;
+}
+
+.bg-blue-700 {
+  background-color: #1a2e86;
+}
+
+.bg-blue-800 {
+  background-color: #14246e;
+}
+
+.bg-blue-900 {
+  background-color: #0d194e;
+}
+
+
+
+
+
+.bg-white-100 {
+  background-color: #FFF;
+}
+
+.bg-white-200 {
+  background-color: #FDFEFE;
+}
+
+.bg-white-300 {
+  background-color: #FBFCFC;
+}
+
+.bg-white-400 {
+  background-color: #F7F9F9;
+}
+
+.bg-white-500 {
+  background-color: #F4F6F7;
+}
+
+.bg-white-600 {
+  background-color: #F0F3F4;
+}
+
+.bg-white-700 {
+  background-color: #ECF0F1;
+}
+
+.bg-white-800 {
+  background-color: #e1e5e6;
+}
+
+.bg-white-900 {
+  background-color: #d2d7d8;
+}
+
+
+
+
+
+
+
+.bg-gray-100 {
+  background-color: #F2F4F4;
+}
+
+.bg-gray-200 {
+  background-color: #E5E8E8;
+}
+
+.bg-gray-300 {
+  background-color: #d8dddd;
+}
+
+.bg-gray-400 {
+  background-color: #B2BABB;
+}
+
+.bg-gray-500 {
+  background-color: #99A3A4;
+}
+
+.bg-gray-600 {
+  background-color: #7F8C8D;
+}
+
+.bg-gray-700 {
+  background-color: #707B7C;
+}
+
+.bg-gray-800 {
+  background-color: #616A6B;
+}
+
+.bg-gray-900 {
+  background-color: #515A5A;
+}
+
+
+
+
+
+
+.bg-black-100 {
+  background-color: #313131;
+}
+
+.bg-black-200 {
+  background-color: #2a2a2a;
+}
+
+.bg-black-300 {
+  background-color: #222222;
+}
+
+.bg-black-400 {
+  background-color: #1f1f1f;
+}
+
+.bg-black-500 {
+  background-color: #181818;
+}
+
+.bg-black-600 {
+  background-color: #131313;
+}
+
+.bg-black-700 {
+  background-color: #111111;
+}
+
+.bg-black-800 {
+  background-color: #0e0e0e;
+}
+
+.bg-black-900 {
+  background-color: #000000;
+}
+
+
+
+
+.bg-brown-100 {
+  background-color: #959595;
+}
+
+.bg-brown-200 {
+  background-color: #7c7c7c;
+}
+
+.bg-brown-300 {
+  background-color: #6b6969;
+}
+
+.bg-brown-400 {
+  background-color: #5a5656;
+}
+
+.bg-brown-500 {
+  background-color: #4b4b4b;
+}
+
+.bg-brown-600 {
+  background-color: #444242;
+}
+
+.bg-brown-700 {
+  background-color: #2e3532;
+}
+
+.bg-brown-800 {
+  background-color: #2b2a2e;
+}
+
+.bg-brown-900 {
+  background-color: #2c2a33;
+}
+
+.bg-brown-1000 {
+  background-color: #26242f;
+}

@@ -1,8 +1,12 @@
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import { Route } from 'react-router-dom';
-import NoteList from './NoteList';
-import NotePage from './NotePage';
+
+// redux
 import { logoTransparent } from '../../actions/globalActions'
+
+// lazy
+const NoteList = lazy(() => import('./NoteList'));
+const NotePage = lazy(() => import('./NotePage'));
 
 const NotesHome = () => {
 
@@ -11,10 +15,10 @@ const NotesHome = () => {
   }, []);
 
   return (
-    <>
+    <Suspense fallback={<div>Loading...</div>}>
       <Route exact path="/notes" component={NoteList} />
       <Route exact path="/notes/:collection/:note" component={NotePage} />
-    </>
+    </Suspense>
   )
 }
 

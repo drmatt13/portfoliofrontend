@@ -1,12 +1,7 @@
-import axios from 'axios';
-import { setCookie, deleteCookie } from '../utilities/cookies';
-
 const initialState = {
   user: undefined,
-  profileImage: null,
   navOpen: false,
   logoTransparent: false,
-  miniSocial: false,
   about: false
 }
 

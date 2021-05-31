@@ -1,14 +1,21 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import MiniAvatar from './MiniAvatar';
 
 // utilities
 import { getCookie } from '../../../utilities/cookies';
 
-const Post = ({ post: { userId, profileId, postContent } }) => {
+const openInNewTab = (url) => {
+  const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+  if (newWindow) newWindow.opener = null
+}
+
+const Post = ({ post: { userId, profileId, postContent, ogMetadata }, news }) => {
 
   const [users, setUsers] = useState();
   const [order, setOrder] = useState();
+  const [metadata, setMetadata] = useState();
 
   const fetchUsers = async () => {
     const res = await axios({
@@ -21,6 +28,7 @@ const Post = ({ post: { userId, profileId, postContent } }) => {
   }
 
   useEffect(() => {
+    if (!!ogMetadata) setMetadata(JSON.parse(ogMetadata));
     fetchUsers();
   }, []);
 
@@ -32,21 +40,34 @@ const Post = ({ post: { userId, profileId, postContent } }) => {
   }, [users])
 
   return (
-    <div>
+    <div className={`SOCIAL-post-container b-r-10 m-b-15 box-shadow-1 fade-in ${news ? 'NEWS' : ''}`}>
       {!order && <div>loading...</div>}
-      {order && <div style={{backgroundColor: '#F003', marginTop: '5px'}}>
-        {users.length !== 2 && <div>
-          <Link to={`/social/${users[order[0]]._id}`}>
-            {users[order[0]].firstName} {users[order[0]].lastName}
-          </Link>
+      {order && <>
+        {!news && <div className="SOCIAL-post-header-container p-10 p-t-0 mini-scroll blue-scroll">
+          {(users && !news) && <MiniAvatar user={users[order[0]]} profile={users[order[1]]} />}
+          <div className="m-t-10 m-b-5 t-lg">{postContent}</div>
         </div>}
-        {users.length === 2 && <div>
-          <Link to={`/social/${users[order[0]]._id}`}>{users[order[0]].firstName} {users[order[0]].lastName}</Link> 
-          {' -> '} 
-          <Link to={`/social/${users[order[1]]._id}`}>{users[order[1]].firstName} {users[order[1]].lastName}</Link>
+        {metadata && <>
+
+          <div className="SOCIAL-feed-og-container relative pointer fade-in" onClick={() => openInNewTab(metadata.url)}>
+              {metadata.image && <div className="SOCIAL-feed-og-image">
+                <img src={metadata.image} alt="og-image"/>
+              </div>}
+              <div className={`SOCIAL-feed-og-info-container`}>
+                <div className="SOCIAL-feed-og-source">{metadata.source}</div>
+                <h4 className="p-y-2.5">{metadata.title}</h4>
+              </div>
+          </div>
+
+        </>}
+
+        {!news && <div className="SOCIAL-post-footer-container f f-j-space-evenly f-a-center p-t-5 no-select">
+          <div><i className="far fa-thumbs-up"></i>⠀Like</div>
+          <div><i className="far fa-comment"></i>⠀Comment</div>
+          <div><i className="fas fa-share"></i>⠀Share</div>
         </div>}
-        <div>{postContent}</div>
-      </div>}
+
+      </>}
     </div>
   )
 }

@@ -4,12 +4,12 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import NavBar from './components/ui/NavBar'
 import Spinner from './components/ui/Spinner';
 import Pages from './components/ui/Pages'
-import MiniSocial from './components/mini social/MiniSocial'
 import About from './components/ui/About'
 import Footer from './components/ui/Footer'
 
 // css
 import './app.css';
+import './colors.css';
 
 // utilities
 import { getCookie, deleteCookie } from './utilities/cookies';
@@ -55,17 +55,38 @@ const App = () => {
     verifyAuth();
   }, []);
 
+  // url(/images/background4.jpg)
+  // https://i.lensdump.com/i/mgY2Q.jpg
+  // https://images.wallpaperscraft.com/image/moraine_lake_alberta_canada_hdr_93615_2560x1440.jpg
+  // https://i.pinimg.com/originals/70/fc/0c/70fc0c9846423ccf3ff8506fd9268233.jpg?q=60
+  // https://images.hdqwalls.com/wallpapers/beautiful-mountains-clear-reflection-in-water-em.jpg
+  // https://images.alphacoders.com/461/461992.jpg
+  // https://cdn.pixabay.com/photo/2016/02/18/22/33/forest-1208296_960_720.jpg
+  // https://www.wallpaperflare.com/static/296/630/540/fir-trees-fog-foggy-forest-wallpaper.jpg
+  // https://https://wallpaperaccess.com/full/464542.jpg
+  // https://safebooru.org//images/2707/d7d73bb4ba90e830a002f6852e4a1f2baf73eafc.gif
+  // https://i.pinimg.com/originals/19/6a/d9/196ad9d3122098b297d7b99ce9ff209f.gif
+  // https://wallpaperaccess.com/full/1270167.gif
+  // http://img1.joyreactor.com/pics/post/full/art-scenery-gif-waterfall-3368027.gif
+
+  // style={{backgroundImage:'url("https://images.wallpaperscraft.com/image/moraine_lake_alberta_canada_hdr_93615_2560x1440.jpg")'}}
+
   return (
     <Provider store={store} >
       <Router>
-        <NavBar />
-        <div className="app-master-container" style={{backgroundColor: 'rgb(108, 146, 108)', backgroundImage:"url(/images/background4.jpg)"}} onClick={closeNav}>
+        
+        <div 
+          className="app-master-container" 
+          id="app-master-container" 
+          onClick={closeNav} 
+          style={{
+            backgroundImage:'url("https://images.alphacoders.com/461/461992.jpg")'
+          }}>
           {loading && <Spinner/>}
           {!loading && <Pages/>}
-          <MiniSocial />
-          <About />
+          <Footer />
         </div>
-        <Footer />
+        <NavBar />
       </Router>
     </Provider>
   )
